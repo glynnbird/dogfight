@@ -14,10 +14,10 @@ var sun = new Image();
 sun.src = 'img/sun.png';
 
 // red plane
-var redPlane = new Plane(canvas, 'red', 'img/plane-red.png', 10, 30);
+var redPlane = new Plane(canvas, 'red', 'img/plane-red.png', 30, 90);
 
 // white plane
-var whitePlane = new Plane(canvas, 'white', 'img/plane-white.png', 150, 180);
+var whitePlane = new Plane(canvas, 'white', 'img/plane-white.png', 450, 540);
 
 var joystick = 0;
 var fire = false;
@@ -41,7 +41,7 @@ var drawScorecard = function() {
 setInterval(function() {
   
   context.clearRect(0,0, canvas.width, canvas.height);
-  context.drawImage(sun,250,2);
+  context.drawImage(sun,750,6);
   redPlane.processJoystick(0);
   redPlane.redraw();
   whitePlane.processJoystick(joystick);
@@ -57,7 +57,7 @@ setInterval(function() {
     redPlane.loseLife();
   }
   whitePlane.redraw();
-  context.drawImage(cloud,100,60);
+  context.drawImage(cloud,300,180);
 
   drawScorecard();
 }, 50);

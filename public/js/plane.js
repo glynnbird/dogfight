@@ -26,8 +26,8 @@ var Plane = function(canvas, name, imageSrc, x, y) {
     p.joystick = j;
     p.direction = (p.direction + j * 2) % 360;
     var r = p.direction * p.TO_RADIANS;
-    p.x = p.x + -1 * Math.cos(r);
-    p.y = p.y + -1 * Math.sin(r);
+    p.x = p.x + -3 * Math.cos(r);
+    p.y = p.y + -3 * Math.sin(r);
 
     // missile
     if (p.missile) {
@@ -87,7 +87,7 @@ var Plane = function(canvas, name, imageSrc, x, y) {
       var obj = {
         x: p.x,
         y: p.y,
-        speed: 3,
+        speed: 9,
         direction: p.direction,
         img: new Image()
       };
@@ -101,8 +101,8 @@ var Plane = function(canvas, name, imageSrc, x, y) {
     if (p.missile) {
       for (var i in p.missile) {
         var m = p.missile[i];
-        if ( m && (m.x > x - 5 && m.x < x + 5) &&
-              (m.y > y - 5 && m.y < y + 5)) {
+        if ( m && (m.x > x - 15 && m.x < x + 15) &&
+              (m.y > y - 15 && m.y < y + 15)) {
           hit = true;
           p.missile[i] = null;
         }
