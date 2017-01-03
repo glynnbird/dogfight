@@ -21,6 +21,7 @@ var whitePlane = new Plane(canvas, 'white', 'img/plane-white.png', 150, 180);
 
 var joystick = 0;
 var fire = false;
+var flipflop = false;
 
 var pad = function(str) {
   return ('     ' + str).slice(-5);
@@ -38,13 +39,19 @@ var drawScorecard = function() {
 }
 
 setInterval(function() {
+  
   context.clearRect(0,0, canvas.width, canvas.height);
   context.drawImage(sun,250,2);
   redPlane.processJoystick(0);
   redPlane.redraw();
   whitePlane.processJoystick(joystick);
   if (fire) {
-    whitePlane.fire();
+    if (flipflop === false) {
+      whitePlane.fire();
+    }
+    flipflop = !flipflop;
+  } else {
+    flipflop = false;
   }
   if (whitePlane.missileCollides(redPlane.x, redPlane.y)) {
     redPlane.loseLife();
