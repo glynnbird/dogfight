@@ -19,6 +19,9 @@ var redPlane = new Plane(canvas, 'red', 'img/plane-red.png', 30, 90);
 // white plane
 var whitePlane = new Plane(canvas, 'white', 'img/plane-white.png', 450, 540);
 
+// fire sound
+var audio = new Audio('audio/metal.mp3');
+
 var joystick = 0;
 var fire = false;
 var flipflop = false;
@@ -31,11 +34,11 @@ var drawScorecard = function() {
   scorecardcontext.clearRect(0,0, scorecardcanvas.width, scorecardcanvas.height);
   scorecardcontext.font = '15px courier, monospace';
   scorecardcontext.strokeStyle = 'red';
-  scorecardcontext.strokeText('HITS' + pad(redPlane.hits),20, 12);
-  scorecardcontext.strokeText('RNDS' + pad(redPlane.rounds),20, 25);
+  scorecardcontext.strokeText('HITS' + pad(redPlane.hits),10, 22);
+  scorecardcontext.strokeText('RNDS' + pad(redPlane.rounds),10, 35);
   scorecardcontext.strokeStyle = 'white';
-  scorecardcontext.strokeText('HITS' + pad(whitePlane.hits),215, 12);
-  scorecardcontext.strokeText('RNDS' + pad(whitePlane.rounds),215, 25);
+  scorecardcontext.strokeText('HITS' + pad(whitePlane.hits),10, 52);
+  scorecardcontext.strokeText('RNDS' + pad(whitePlane.rounds),10, 65);
 }
 
 setInterval(function() {
@@ -47,6 +50,9 @@ setInterval(function() {
   whitePlane.processJoystick(joystick);
   if (fire) {
     if (flipflop === false) {
+      // http://soundbible.com/1804-M4A1-Single.html
+      var audio = new Audio('audio/fire.mp3');
+      audio.play();
       whitePlane.fire();
     }
     flipflop = !flipflop;

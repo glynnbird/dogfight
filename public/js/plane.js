@@ -115,6 +115,16 @@ var Plane = function(canvas, name, imageSrc, x, y) {
         }
       });
     }
+    if (hit) {
+      // http://soundbible.com/1781-Metal-Clang.html
+      if(Math.random()>0.5) {
+        var audio = new Audio('audio/clang.mp3');
+      } else {
+        var audio = new Audio('audio/metal.mp3');
+      }
+      
+      audio.play();
+    }
     return hit;
   }
 

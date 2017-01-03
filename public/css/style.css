@@ -1,8 +1,12 @@
+body: { margin: 0px; padding:0px}
+
 #game {
   background-color:blue;
-  display:block
+  border: 4px solid #666;
 }
 
 #scorecard {
+  position: relative;
+  left: -4px;
   background-color: #666;
 }
