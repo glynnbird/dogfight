@@ -22,6 +22,7 @@
   "homepage": "https://github.com/glynnbird/dogfight#readme",
   "dependencies": {
     "cfenv": "^1.0.3",
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "simple-notification-service": "2.0.0"
   }
 }

@@ -1,19 +1,29 @@
 "use strict"
 
-/*****
-    Express and environment
-*****/
-const express = require('express');
-const app = express();
+const path = require('path');
+const router = require('express').Router();
 const cfenv = require('cfenv');
 const appEnv = cfenv.getAppEnv();
 
-// static
-app.use(express.static('public'))
+router.get('/red', function(req, res) {
 
-/*****
-    Listening
-*****/
-app.listen(appEnv.port, ( appEnv.bind == "localhost" ? null : appEnv.bind ), () => {
-  console.log(`listening on ${appEnv.url || publicIP}`);
-});
+	res.sendFile(path.join(__dirname, './public', 'index.html'))
+
+})
+
+router.get('/white', function(req, res) {
+
+	res.sendFile(path.join(__dirname, './public', 'index.html'))
+
+})
+
+var opts = {
+	production: true,
+	static: path.join(__dirname, './public'),
+	authentication: [
+		{ hostname: appEnv.bind, key: 'dogfight' }
+	],
+	router: router
+}
+
+const sns = require('simple-notification-service')(opts);

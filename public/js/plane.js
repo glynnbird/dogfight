@@ -38,7 +38,7 @@ var Plane = function(canvas, name, imageSrc, x, y) {
         
           // missile death
           if (m.x < 0 || m.y < 0 || m.x > W || m.y > H) {
-            p.missile[i] = null;
+            p.missile.splice(i, 1)
           }
         }
       }
@@ -71,7 +71,9 @@ var Plane = function(canvas, name, imageSrc, x, y) {
     if (p.missile) {
       p.missile.forEach(function(m) {
         if (m) {
-          p.context.drawImage(m.img, m.x, m.y);
+          var img = new Image()
+          img.src = 'img/missile.png';
+          p.context.drawImage(img, m.x, m.y);
         }
       });
     }
@@ -84,10 +86,8 @@ var Plane = function(canvas, name, imageSrc, x, y) {
         x: p.x,
         y: p.y,
         speed: 9,
-        direction: p.direction,
-        img: new Image()
+        direction: p.direction
       };
-      obj.img.src = 'img/missile.png'
       p.missile.push(obj);
     }
   };
@@ -100,7 +100,8 @@ var Plane = function(canvas, name, imageSrc, x, y) {
         if ( m && (m.x > x - 15 && m.x < x + 15) &&
               (m.y > y - 15 && m.y < y + 15)) {
           hit = true;
-          p.missile[i] = null;
+          p.missile.splice(i, 1)
+
         }
       }
       p.missile.forEach(function(m) {
@@ -111,19 +112,17 @@ var Plane = function(canvas, name, imageSrc, x, y) {
         }
       });
     }
-    if (hit) {
-      // http://soundbible.com/1781-Metal-Clang.html
-      if (Math.random()>0.5) {
-        var audio = new Audio('audio/clang.mp3');
-      } else {
-        var audio = new Audio('audio/metal.mp3');
-      }
-      audio.play();
-    }
+    
     return hit;
   }
 
-  this.loseLife = function() {
+  this.recordHit = function() {
     p.hits++;
+    if (Math.random()>0.5) {
+      var audio = new Audio('audio/clang.mp3');
+    } else {
+      var audio = new Audio('audio/metal.mp3');
+    }
+    audio.play();
   }
 };
