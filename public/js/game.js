@@ -27,6 +27,7 @@ var fire = false;
 var flipflop = false;
 
 var pad = function(str) {
+  str = parseInt(str).toString();
   return ('     ' + str).slice(-5);
 }
 
@@ -36,9 +37,19 @@ var drawScorecard = function() {
   scorecardcontext.strokeStyle = 'red';
   scorecardcontext.strokeText('HITS' + pad(redPlane.hits),10, 22);
   scorecardcontext.strokeText('RNDS' + pad(redPlane.rounds),10, 35);
+  var acc = 0;
+  if (redPlane.rounds < 512) {
+    acc = 100 * whitePlane.hits/(512 - redPlane.rounds);
+  }
+  scorecardcontext.strokeText('ACC ' + pad(acc),10, 48);
   scorecardcontext.strokeStyle = 'white';
-  scorecardcontext.strokeText('HITS' + pad(whitePlane.hits),10, 52);
-  scorecardcontext.strokeText('RNDS' + pad(whitePlane.rounds),10, 65);
+  scorecardcontext.strokeText('HITS' + pad(whitePlane.hits),10, 72);
+  scorecardcontext.strokeText('RNDS' + pad(whitePlane.rounds),10, 85);
+    var acc = 0;
+  if (whitePlane.rounds < 512) {
+    acc = 100 * redPlane.hits/(512 - whitePlane.rounds);
+  }
+  scorecardcontext.strokeText('ACC ' + pad(acc),10, 96);
 }
 
 setInterval(function() {
@@ -50,8 +61,13 @@ setInterval(function() {
   whitePlane.processJoystick(joystick);
   if (fire) {
     if (flipflop === false) {
-      // http://soundbible.com/1804-M4A1-Single.html
-      var audio = new Audio('audio/fire.mp3');
+      if (whitePlane.rounds > 0) {
+        // http://soundbible.com/1804-M4A1-Single.html
+        var audio = new Audio('audio/fire.mp3');
+      } else {
+        // http://soundbible.com/1405-Dry-Fire-Gun.html
+        var audio = new Audio('audio/empty.mp3');
+      }
       audio.play();
       whitePlane.fire();
     }

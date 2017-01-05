@@ -6,8 +6,6 @@ var Plane = function(canvas, name, imageSrc, x, y) {
   this.name = name;
   this.img = new Image();
   this.img.src = imageSrc;
-  this.smoke = new Image();
-  this.smoke.src = 'img/smoke.png';
   this.x = x;
   this.y = y;
   this.missile = [];
@@ -61,8 +59,6 @@ var Plane = function(canvas, name, imageSrc, x, y) {
     if (p.y > H) {
       p.y =  H - p.y;
     }
-
-
   }; 
 
   this.redraw = function() {
@@ -117,12 +113,11 @@ var Plane = function(canvas, name, imageSrc, x, y) {
     }
     if (hit) {
       // http://soundbible.com/1781-Metal-Clang.html
-      if(Math.random()>0.5) {
+      if (Math.random()>0.5) {
         var audio = new Audio('audio/clang.mp3');
       } else {
         var audio = new Audio('audio/metal.mp3');
       }
-      
       audio.play();
     }
     return hit;
