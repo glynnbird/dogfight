@@ -21,7 +21,7 @@ var opts = {
 	production: true,
 	static: path.join(__dirname, './public'),
 	authentication: [
-		{ hostname: appEnv.bind, key: 'dogfight' }
+		{ hostname: appEnv.url, key: 'dogfight' }
 	],
 	router: router
 }
