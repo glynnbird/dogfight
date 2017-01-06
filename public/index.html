@@ -6,7 +6,7 @@
   <body>
 
     <div id="frontsky">
-    <pre>
+    <pre class="maintitle">
 
         ██████╗  ██████╗  ██████╗ ███████╗██╗ ██████╗ ██╗  ██╗████████╗
         ██╔══██╗██╔═══██╗██╔════╝ ██╔════╝██║██╔════╝ ██║  ██║╚══██╔══╝
@@ -26,7 +26,7 @@
        var a = document.getElementById('newgame');
        var gameId = '';
        for(var i = 0; i < 8; i++) {
-         gameId += String.fromCharCode(97 + Math.random()*26);
+         gameId += String.fromCharCode(65 + Math.random()*26);
        }
        a.setAttribute('href', '/' + gameId + '/white');
     </script>

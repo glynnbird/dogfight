@@ -23,8 +23,14 @@ a:visited, a:link.newgame, a:hover.newgame{
   font-size: 40px
 }
 
-pre {
+.maintitle {
   color: white;
+}
+
+#opponent {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  margin-left:25px
 }
 
 .whiteplane {

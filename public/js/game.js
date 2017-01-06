@@ -24,6 +24,11 @@ var sns = new SNSClient('dogfight', {
 var cloud = new Image();
 cloud.src = '/img/cloud.png';
 
+// opponent link
+var opponentlink = document.getElementById('opponent');
+var url = window.location.href.replace(myColour,theirColour);
+console.log(url);
+opponentlink.innerHTML = url;
 
 // the sun
 var sun = new Image();
