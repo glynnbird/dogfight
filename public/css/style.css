@@ -15,8 +15,11 @@ body: { margin: 0px; padding:0px}
   background-color:blue;
 }
 
-a:visited, a:link.newgame, a:hover.newgame{
+a:visited.front, a:link.front, a:hover.front{
   color: white;
+}
+
+#newgame {
   font-size: 40px
 }
 
@@ -32,8 +35,8 @@ a:visited, a:link.newgame, a:hover.newgame{
 
 .whiteplane {
   position:absolute;
-  top: 400px;
-  left: 640px;
+  top: 290px;
+  left: 340px;
   width: 126px;
   height: 60px;
   transform: rotate(25deg);
@@ -41,8 +44,8 @@ a:visited, a:link.newgame, a:hover.newgame{
 
 .redplane {
   position:absolute;
-  top: 350px;
-  left: 350px;
+  top: 220px;
+  left: 150px;
   width: 126px;
   height: 60px;
   transform: rotate(15deg);

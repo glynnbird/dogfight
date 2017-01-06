@@ -8,7 +8,7 @@ var lagged = true;
 var pathBits =  location.pathname.replace(/^\//, '').split('/');
 var myColour = pathBits[1];
 var gameId = pathBits[0];
-console.log(gameId, myColour);
+
 var theirColour = (myColour == "white") ? "red" : "white"
 var sns = new SNSClient('dogfight', {
   userData: {
@@ -150,8 +150,5 @@ sns.on('notification', function(plane) {
         theirPlane.recordHit();
       }
       break;
-
   }
-  
-  
-})
+});
