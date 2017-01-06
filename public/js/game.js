@@ -5,35 +5,38 @@ var scorecardcanvas = document.getElementById('scorecard');
 var scorecardcontext = scorecardcanvas.getContext('2d');
 
 var lagged = true;
-var myColour = location.pathname.replace("/", "");
+var pathBits =  location.pathname.replace(/^\//, '').split('/');
+var myColour = pathBits[1];
+var gameId = pathBits[0];
+console.log(gameId, myColour);
 var theirColour = (myColour == "white") ? "red" : "white"
 var sns = new SNSClient('dogfight', {
   userData: {
-    type: "dogfight",
+    type: gameId,
     colour: myColour
   },
   userQuery: {
-    type: "dogfight"
+    type: gameId
   }
 });
 
 // the cloud
 var cloud = new Image();
-cloud.src = 'img/cloud.png';
+cloud.src = '/img/cloud.png';
 
 
 // the sun
 var sun = new Image();
-sun.src = 'img/sun.png';
+sun.src = '/img/sun.png';
 
 // their plane
-var theirPlane = new Plane(canvas, theirColour, 'img/plane-'+theirColour+'.png', 30, 90);
+var theirPlane = new Plane(canvas, theirColour, '/img/plane-'+theirColour+'.png', 30, 90);
 
 // my plane
-var myPlane = new Plane(canvas, myColour, 'img/plane-'+myColour+'.png', 450, 540);
+var myPlane = new Plane(canvas, myColour, '/img/plane-'+myColour+'.png', 450, 540);
 
 // fire sound
-var audio = new Audio('audio/metal.mp3');
+var audio = new Audio('/audio/metal.mp3');
 
 var joystick = 0;
 var fire = false;
@@ -50,19 +53,9 @@ var drawScorecard = function() {
   scorecardcontext.strokeStyle = theirColour;
   scorecardcontext.strokeText('HITS' + pad(theirPlane.hits),10, 22);
   scorecardcontext.strokeText('RNDS' + pad(theirPlane.rounds),10, 35);
-  var acc = 0;
-  if (theirPlane.rounds < 512) {
-    acc = 100 * myPlane.hits/(512 - theirPlane.rounds);
-  }
-  scorecardcontext.strokeText('ACC ' + pad(acc),10, 48);
   scorecardcontext.strokeStyle = myColour;
   scorecardcontext.strokeText('HITS' + pad(myPlane.hits),10, 72);
   scorecardcontext.strokeText('RNDS' + pad(myPlane.rounds),10, 85);
-    var acc = 0;
-  if (myPlane.rounds < 512) {
-    acc = 100 * theirPlane.hits/(512 - myPlane.rounds);
-  }
-  scorecardcontext.strokeText('ACC ' + pad(acc),10, 96);
 }
 
 setInterval(function() {
@@ -81,10 +74,10 @@ setInterval(function() {
     if (flipflop === false) {
       if (myPlane.rounds > 0) {
         // http://soundbible.com/1804-M4A1-Single.html
-        var audio = new Audio('audio/fire.mp3');
+        var audio = new Audio('/audio/fire.mp3');
       } else {
         // http://soundbible.com/1405-Dry-Fire-Gun.html
-        var audio = new Audio('audio/empty.mp3');
+        var audio = new Audio('/audio/empty.mp3');
       }
       audio.play();
       myPlane.fire();
@@ -96,7 +89,7 @@ setInterval(function() {
   
   if (myPlane.missileCollides(theirPlane.x, theirPlane.y)) {
     myPlane.recordHit();
-    sns.send({ type: 'dogfight', colour: theirColour }, { action: 'hit', colour: myColour })
+    sns.send({ type: gameId, colour: theirColour }, { action: 'hit', colour: myColour })
   }
   
   var myPosition = {
@@ -107,7 +100,7 @@ setInterval(function() {
     direction: myPlane.direction
   }
 
-  sns.send({ type: 'dogfight', colour: theirColour }, { action: 'position', colour: myColour, data: myPosition })
+  sns.send({ type: gameId, colour: theirColour }, { action: 'position', colour: myColour, data: myPosition })
   myPlane.redraw();
   context.drawImage(cloud,300,180);
 

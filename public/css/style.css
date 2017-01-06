@@ -2,11 +2,45 @@ body: { margin: 0px; padding:0px}
 
 #game {
   background-color:blue;
-  border: 4px solid #666;
+  border: 4px solid #666
 }
 
 #scorecard {
   position: relative;
   left: -4px;
   background-color: #666;
+}
+
+#frontsky {
+  background-color:blue;
+  border: 4px solid #666;
+  width: 960px;
+  height: 768px;
+}
+
+a:visited, a:link.newgame, a:hover.newgame{
+  color: white;
+  font-size: 40px
+}
+
+pre {
+  color: white;
+}
+
+.whiteplane {
+  position:absolute;
+  top: 400px;
+  left: 640px;
+  width: 126px;
+  height: 60px;
+  transform: rotate(25deg);
+}
+
+.redplane {
+  position:absolute;
+  top: 350px;
+  left: 350px;
+  width: 126px;
+  height: 60px;
+  transform: rotate(15deg);
 }

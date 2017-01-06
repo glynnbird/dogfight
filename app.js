@@ -5,15 +5,15 @@ const router = require('express').Router();
 const cfenv = require('cfenv');
 const appEnv = cfenv.getAppEnv();
 
-router.get('/red', function(req, res) {
+router.get('/:gameid/red', function(req, res) {
 
-	res.sendFile(path.join(__dirname, './public', 'index.html'))
+	res.sendFile(path.join(__dirname, './public', 'game.html'))
 
 })
 
-router.get('/white', function(req, res) {
+router.get('/:gameid/white', function(req, res) {
 
-	res.sendFile(path.join(__dirname, './public', 'index.html'))
+	res.sendFile(path.join(__dirname, './public', 'game.html'))
 
 })
 
