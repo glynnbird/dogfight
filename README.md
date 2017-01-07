@@ -35,3 +35,9 @@ npm start
 ```
 
 or you can play this game online at [dogfight.mybluemix.net](https://dogfight.mybluemix.net/).
+
+## Controls
+
+- left cursor - nose down
+- right cursor - nose up
+- space - fire
