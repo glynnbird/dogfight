@@ -34,3 +34,4 @@ then `npm start` to run the games
 npm start
 ```
 
+or you can play this game online at [dogfight.mybluemix.net](https://dogfight.mybluemix.net/).
