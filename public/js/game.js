@@ -16,7 +16,8 @@ var sns = new SNSClient('dogfight', {
     colour: myColour
   },
   userQuery: {
-    type: gameId
+    type: gameId,
+    colour: theirColour
   }
 });
 
