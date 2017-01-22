@@ -95,13 +95,13 @@ var Plane = function(canvas, name, imageSrc, x, y) {
   this.missileCollides = function(x, y) {
     var hit = false;
     if (p.missile) {
-      for (var i in p.missile) {
+      // reverse through array to remove dead missiles
+      for (i = p.missile.length; i >=0 ; i--) {
         var m = p.missile[i];
         if ( m && (m.x > x - 15 && m.x < x + 15) &&
               (m.y > y - 15 && m.y < y + 15)) {
           hit = true;
           p.missile.splice(i, 1)
-
         }
       }
       p.missile.forEach(function(m) {
