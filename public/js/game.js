@@ -67,7 +67,7 @@ var drawScorecard = function() {
 setInterval(function() {
   
   context.clearRect(0,0, canvas.width, canvas.height);
-  context.drawImage(sun,750,6);
+  context.drawImage(sun,600,6);
   
   if (lagged) {
     theirPlane.processJoystick(theirPlane.joystick);
@@ -108,7 +108,7 @@ setInterval(function() {
 
   sns.send({ type: gameId, colour: theirColour }, { action: 'position', colour: myColour, data: myPosition })
   myPlane.redraw();
-  context.drawImage(cloud,300,180);
+  context.drawImage(cloud,200,150);
 
   drawScorecard();
 }, 50);
