@@ -17,7 +17,7 @@ It uses RethinkDB as a back-end database and web sockets to deliver data between
 
 Original:
 
-![BBC version](https://raw.githubusercontent.com/glynnbird/dogfight/master/public/img/original.gif)
+![BBC version](https://raw.githubusercontent.com/ibm-cds-labs/dogfight/master/public/img/original.gif)
         
 This version:
 
