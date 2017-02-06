@@ -1,6 +1,6 @@
 # Dogfight
 
-This is a demonstration of real-time notifcations between web apps. It uses the [Simple Notification Service](https://www.npmjs.com/package/simple-notification-service") to provide the real-time connection between the client and server processes, which in turn use [RethinkDB on Compose](https://www.compose.com/rethinkdb) to store and publish the data.
+This is a demonstration of real-time notifcations between web apps. It uses the [Simple Notification Service](https://www.npmjs.com/package/simple-notification-service) to provide the real-time connection between the client and server processes, which in turn use [RethinkDB on Compose](https://www.compose.com/rethinkdb) to store and publish the data.
 
 You can use the *Simple Notification Service* to push data to your web applications to ensure that your web application surfaces the latest, freshest data as it arrives. e.g. web chat or pushing sports scores to a web front end as they arrive.
 
