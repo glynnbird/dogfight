@@ -72,7 +72,7 @@ var Plane = function(canvas, name, imageSrc, x, y) {
       p.missile.forEach(function(m) {
         if (m) {
           var img = new Image()
-          img.src = '/img/missile.png';
+          img.src = 'img/missile.png';
           p.context.drawImage(img, m.x, m.y);
         }
       });
@@ -119,9 +119,9 @@ var Plane = function(canvas, name, imageSrc, x, y) {
   this.recordHit = function() {
     p.hits++;
     if (Math.random()>0.5) {
-      var audio = new Audio('/audio/clang.mp3');
+      var audio = new Audio('audio/clang.mp3');
     } else {
-      var audio = new Audio('/audio/metal.mp3');
+      var audio = new Audio('audio/metal.mp3');
     }
     audio.play();
   }
