@@ -2,10 +2,9 @@
 
 In 1983 I had a BBC Micro computer. One of my favourite games was [Dogfight](http://www.retrogames.co.uk/027297/Other-Formats/Dogfight-by-Opus-Software).
 
-I decided to recreate it in JavaScript using the <a target="_new" class="front" href="https://www.npmjs.com/package/simple-notification-service">Simple Notification Service</a> 
-to handle the transfer of data between the two participants. The SNS allows client-side web applications to send or receive real-time notifications. 
-It uses RethinkDB as a back-end database and web sockets to deliver data between the server and the browser.
+I decided to recreate it in JavaScript.
 
+Try it [here](https://glynnbird.github.io/dogfight/).
 
 ## Screenshots
 
@@ -21,25 +20,16 @@ Homepage:
 
 ![Homepage](https://raw.githubusercontent.com/glynnbird/dogfight/master/public/img/homepage.png)
 
-## Installation
-
-To run locally you'll need [RethinkDB](https://www.rethinkdb.com/) running on your machine. Simply clone this repository and run `npm install` 
-once to install the dependencies
-
-```sh
-npm install
-```
-
-then `npm start` to run the games
-
-```sh
-npm start
-```
-
-or you can play this game online at [dogfight.mybluemix.net](https://dogfight.mybluemix.net/).
-
 ## Controls
+
+### White plane
 
 - left cursor - nose down
 - right cursor - nose up
 - space - fire
+
+### Red plane
+
+- Q - nose down
+- W - nose up
+- A - fire
