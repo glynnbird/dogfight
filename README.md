@@ -10,15 +10,15 @@ Try it [here](https://glynnbird.github.io/dogfight/).
 
 Original:
 
-![BBC version](https://raw.githubusercontent.com/ibm-cds-labs/dogfight/master/public/img/original.gif)
+![BBC version](https://raw.githubusercontent.com/glynnbird/dogfight/master/public/img/original.gif)
         
 This version:
 
-![This version](https://raw.githubusercontent.com/ibm-cds-labs/dogfight/master/public/img/screenshot.png)
+![This version](https://raw.githubusercontent.com/glynnbird/dogfight/master/public/img/screenshot.png)
 
 Homepage:
 
-![Homepage](https://raw.githubusercontent.com/ibm-cds-labs/dogfight/master/public/img/homepage.png)
+![Homepage](https://raw.githubusercontent.com/glynnbird/dogfight/master/public/img/homepage.png)
 
 ## Controls
 
