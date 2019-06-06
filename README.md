@@ -10,15 +10,15 @@ Try it [here](https://glynnbird.github.io/dogfight/).
 
 Original:
 
-![BBC version](https://raw.githubusercontent.com/glynnbird/dogfight/master/public/img/original.gif)
+![BBC version](https://raw.githubusercontent.com/ibm-cds-labs/dogfight/master/public/img/original.gif)
         
 This version:
 
-![This version](https://raw.githubusercontent.com/glynnbird/dogfight/master/public/img/screenshot.png)
+![This version](https://raw.githubusercontent.com/ibm-cds-labs/dogfight/master/public/img/screenshot.png)
 
 Homepage:
 
-![Homepage](https://raw.githubusercontent.com/glynnbird/dogfight/master/public/img/homepage.png)
+![Homepage](https://raw.githubusercontent.com/ibm-cds-labs/dogfight/master/public/img/homepage.png)
 
 ## Controls
 
@@ -33,3 +33,8 @@ Homepage:
 - Q - nose down
 - W - nose up
 - A - fire
+
+## License
+
+This is an open-source project published under the Apache-2.0 license. Feel free to build upon, reference or contribute to this project.
+
