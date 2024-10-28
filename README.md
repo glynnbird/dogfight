@@ -4,7 +4,7 @@ In 1983 I had a BBC Micro computer. One of my favourite games was [Dogfight](htt
 
 I decided to recreate it in JavaScript.
 
-Try it [here](https://glynnbird.github.io/dogfight/).
+Try it [here](https://dogfight.glynnbird).
 
 ## Screenshots
 
