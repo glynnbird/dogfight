@@ -59,9 +59,11 @@ a:visited.front, a:link.front, a:hover.front{
   height: 50px;
   margin-bottom:50px;
   display: block;
+  user-select:none;
 }
 
 .floater {
   background-color: #eee;
   padding:25px;
+  user-select:none;
 }
