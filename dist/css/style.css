@@ -1,4 +1,8 @@
-body: { margin: 0px; padding:0px}
+body { 
+  margin: 0px; 
+  padding: 0px;
+  font-family: "Courier New", Courier, monospace;
+}
 
 #game {
   background-color:blue;
@@ -48,4 +52,16 @@ a:visited.front, a:link.front, a:hover.front{
   width: 126px;
   height: 60px;
   transform: rotate(15deg);
+}
+
+.bigbutton {
+  width: 80px;
+  height: 50px;
+  margin-bottom:50px;
+  display: block;
+}
+
+.floater {
+  background-color: #eee;
+  padding:25px;
 }
