@@ -14,6 +14,8 @@ var Plane = function(canvas, name, imageSrc, x, y) {
   this.hits = 0;
   this.hits = 0;
   this.joystick = 0;
+  this.missileImage = new Image()
+  this.missileImage.src = 'img/missile.png';
 
   // draw on load
   this.img.addEventListener('load', function() {
@@ -71,9 +73,7 @@ var Plane = function(canvas, name, imageSrc, x, y) {
     if (p.missile) {
       p.missile.forEach(function(m) {
         if (m) {
-          var img = new Image()
-          img.src = 'img/missile.png';
-          p.context.drawImage(img, m.x, m.y);
+          p.context.drawImage(p.missileImage, Math.floor(m.x), Math.floor(m.y));
         }
       });
     }

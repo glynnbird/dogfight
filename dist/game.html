@@ -7,15 +7,29 @@
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <link rel="manifest" href="/dogfight.webmanifest" />
   </head>
-  <body>
+  <body style="width: 910px">
     <canvas id="game" width="800" height="600"></canvas>
     <canvas id="scorecard" width="100" height="600"></canvas>
-    <div>
-      <h2>White</h2>
-      LEFT CURSOR, RIGHT CURSOR, SPACE
+    <div style="clear: both"></div>
+    <div style="float:right">
       <h2>Red</h2>
+      <button ontouchstart="onRUp()" ontouchend="onRCancel()">R U</button>
+      <button ontouchstart="onRDown()" ontouchend="onRCancel()">R D</button>
+      <button ontouchstart="onRFire()" ontouchend="onRCancel()">R F</button>
+      <br /><br />
       Q, W, A
     </div>
+    <div style="float:left">
+      <h2>White</h2>
+      <button ontouchstart="onLUp()" ontouchend="onLCancel()">L U</button>
+      <button ontouchstart="onLDown()" ontouchend="onLCancel()">L D</button>
+      <button ontouchstart="onLFire()" ontouchend="onLCancel()">L F</button>
+      <br /><br />
+      LEFT CURSOR, RIGHT CURSOR, SPACE
+    </div>
+    <div style="clear: both"></div>
+
+    
     <script src="js/plane.js"></script>
     <script src="js/game.js"></script>
   </body>

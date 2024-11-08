@@ -110,7 +110,6 @@ setInterval(function() {
 
 document.onkeydown = function(evt) {
   evt = evt || window.event;
-  console.log(evt.keyCode)
   if (evt.keyCode == 37) {
     whiteJoystick=-1;
   }
@@ -148,3 +147,31 @@ document.onkeyup = function(evt) {
     redFire=false;
   }
 };
+
+const onRUp = function() {
+  redJoystick = 1
+}
+const onRDown = function() {
+  redJoystick = -1
+}
+const onRFire = function() {
+  redFire = true
+}
+const onRCancel = function() {
+  redFire = false
+  redJoystick = 0
+}
+
+const onLUp = function() {
+  whiteJoystick = 1
+}
+const onLDown = function() {
+  whiteJoystick = -1
+}
+const onLFire = function() {
+  whiteFire = true
+}
+const onLCancel = function() {
+  whiteFire = false
+  whiteJoystick = 0
+}
