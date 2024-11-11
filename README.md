@@ -1,24 +1,24 @@
 # Dogfight
 
-In 1983 I had a BBC Micro computer. One of my favourite games was [Dogfight](http://www.retrogames.co.uk/027297/Other-Formats/Dogfight-by-Opus-Software).
+In 1983 I had a BBC Micro computer. One of my favourite games was [Dogfight](https://bbcmicro.co.uk/game.php?id=26).
 
 I decided to recreate it in JavaScript.
 
-Try it [here](https://dogfight.glynnbird).
+Try it [here](https://dogfight.glynnbird.com).
 
 ## Screenshots
 
 Original:
 
-![BBC version](https://raw.githubusercontent.com/glynnbird/dogfight/master/img/original.gif)
+![BBC version](https://raw.githubusercontent.com/glynnbird/dogfight/master/dist/img/original.gif)
         
 This version:
 
-![This version](https://raw.githubusercontent.com/glynnbird/dogfight/master/img/screenshot.png)
+![This version](https://raw.githubusercontent.com/glynnbird/dogfight/master/dist/img/screenshot.png)
 
 Homepage:
 
-![Homepage](https://raw.githubusercontent.com/glynnbird/dogfight/master/img/homepage.png)
+![Homepage](https://raw.githubusercontent.com/glynnbird/dogfight/master/dist/img/homepage.png)
 
 ## Controls
 
